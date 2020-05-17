@@ -1,0 +1,16 @@
+pipeline
+{
+	agent any
+	stages
+	{
+		stage ('My first cloud formation template to launch ec2 instance.')
+		{
+			steps
+			{
+				withAWS(credentials: 'AWS-Root-id', role: 'Root user id') {
+				sh 'aws cloudformation create-stack --stack-name Cloud-Formation-EC2-create --template-body file://Cloud_formation_EC2_Generation'
+				}
+			}
+		}
+	}
+}
