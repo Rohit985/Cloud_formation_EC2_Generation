@@ -1,0 +1,32 @@
+  
+{
+ "Description": "Create an EC2 instance by AWS CloudFormation",
+  "Resources": {
+    "SecurityGroupCloudFormation": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupName": "sgCloudFormation",
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 0,
+            "ToPort": 65535,
+            "CidrIp": "0.0.0.0/0",
+            "Description": "For traffic from Internet"
+          }
+        ],
+        "GroupDescription": "Security Group for demo",
+        "VpcId": "vpc-e63e5d9e"
+      }
+    },
+	"MyCloudFormationEC2Instance": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "AvailabilityZone": "us-east-2c",        
+        "ImageId": "ami-0d6621c01e8c2de2c",
+        "InstanceType": "t2.micro",
+        "KeyName": "keypairoregon"        
+      }
+    }
+ }
+}
