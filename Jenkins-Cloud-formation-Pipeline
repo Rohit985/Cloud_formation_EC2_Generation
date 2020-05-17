@@ -8,7 +8,7 @@ pipeline
 			steps
 			{
 				withAWS(credentials: 'AWS-Root-id', role: 'Root user id') {
-				sh 'aws cloudformation create-stack --stack-name Cloud-Formation-EC2-create --template-body file://Cloud_formation_EC2_Creation'
+				sh 'aws cloudformation create-stack --stack-name Cloud-Formation-EC2-create${BUILD_NUMBER} --template-body file://Cloud_formation_EC2_Creation'
 				}
 			}
 		}
