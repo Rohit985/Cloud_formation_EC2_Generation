@@ -1,49 +1,17 @@
 --- 
 Description: "Create an EC2 instance by AWS CloudFormation"
-Mappings: 
-  AmiMap: 
-    ServerType01: 
-      id: ami-0d6621c01e8c2de2c
-  KeyPair: 
-    Key01: 
-      key: keypairoregon
 Resources: 
   EC2InstanceDemoSvr: 
     Properties: 
-      AvailabilityZone: us-west-2
-      BlockDeviceMappings: 
-        - 
-          DeviceName: /dev/xvda
-          Ebs: 
-            DeleteOnTermination: "true"
-            VolumeSize: "8"
-            VolumeType: gp2
-      ImageId: 
-        ? "Fn::FindInMap"
-        : 
-          - AmiMap
-          - ServerType01
-          - id
+      AvailabilityZone: us-west-2a
+      ImageId: ami-0d6621c01e8c2de2c
       InstanceType: t2.micro
-      KeyName: 
-        ? "Fn::FindInMap"
-        : 
-          - KeyPair
-          - Key01
-          - key
-      NetworkInterfaces: 
-        - 
-          Description: "Primary network interface"
-          DeviceIndex: "0"
-          GroupSet: 
-            - 
-              Ref: SecurityGroupDemoSvrTraffic
-          SubnetId: subnet-125fa26a
+      KeyName: keypairoregon
     Type: "AWS::EC2::Instance"
   SecurityGroupDemoSvrTraffic: 
     Properties: 
       GroupDescription: "Security Group for demo server"
-      GroupName: sgcloudform
+      GroupName: SGcloudFomation
       SecurityGroupIngress: 
         - 
           CidrIp: 0.0.0.0/0
