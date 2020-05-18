@@ -10,8 +10,8 @@ Resources:
     Type: "AWS::EC2::Instance"
   SecurityGroupDemoSvrTraffic: 
     Properties: 
-      GroupDescription: "Security Group for demo server"
-      GroupName: SGcloudFomation
+      GroupDescription: "Security Group for CloudFormation server"
+      GroupName: Sgcfec2yaml
       SecurityGroupIngress: 
         - 
           CidrIp: 0.0.0.0/0
