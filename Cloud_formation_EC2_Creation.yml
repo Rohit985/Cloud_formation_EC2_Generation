@@ -10,7 +10,7 @@ Mappings:
 Resources: 
   EC2InstanceDemoSvr: 
     Properties: 
-      AvailabilityZone: us-west-2a
+      AvailabilityZone: us-west-2
       BlockDeviceMappings: 
         - 
           DeviceName: /dev/xvda
