@@ -4,7 +4,7 @@
     "SecurityGroupCloudFormation": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
-        "GroupName": "sgCloudFormation",
+        "GroupName": "sgCloudForec2",
         "SecurityGroupIngress": [
           {
             "IpProtocol": "tcp",
