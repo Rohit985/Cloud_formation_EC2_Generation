@@ -43,7 +43,7 @@ Resources:
   SecurityGroupDemoSvrTraffic: 
     Properties: 
       GroupDescription: "Security Group for demo server"
-      GroupName: sgDemoSvr
+      GroupName: sgcloudform
       SecurityGroupIngress: 
         - 
           CidrIp: 0.0.0.0/0
